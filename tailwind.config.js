@@ -1,8 +1,15 @@
 module.exports = {
   purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
-  darkMode: false, // or 'media' or 'class'
+  darkMode: 'media',
   theme: {
-    extend: {},
+    extend: {
+      gridTemplateRows: {
+        'protected-routes': '80px auto'
+      },
+      gridTemplateColumns: {
+        'protected-routes': 'auto 400px'
+      },
+    },
   },
   variants: {
     extend: {},
