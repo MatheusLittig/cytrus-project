@@ -4,12 +4,18 @@ module.exports = {
   theme: {
     extend: {
       gridTemplateRows: {
-        'protected-routes': '80px auto',
+        'protected-routes': '80px calc(100vh - 80px)',
         'app-sider': '260px 1fr 80px'
       },
       gridTemplateColumns: {
-        'protected-routes': 'auto 400px'
+        'protected-routes': 'auto 300px'
       },
+      height: {
+        'content': 'calc(100vh - 80px)'
+      },
+      margin: {
+        'screen': '0 auto'
+      }
     },
   },
   variants: {

@@ -1,4 +1,5 @@
 import { ReactNode } from 'react'
+import { Content, Header } from '../modules'
 
 interface ProtectedRoutes {
   children: ReactNode
@@ -6,8 +7,9 @@ interface ProtectedRoutes {
 
 export function ProtectedRoutes({ children }: ProtectedRoutes): JSX.Element {
   return (
-    <div className="dark:bg-gray-900 grid grid-rows-protected-routes grid-cols-protected-routes h-screen">
-      {children}
+    <div className="dark:bg-gray-900 grid grid-rows-protected-routes">
+      <Header />
+      <Content>{children}</Content>
     </div>
   )
 }
