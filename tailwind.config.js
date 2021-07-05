@@ -4,7 +4,8 @@ module.exports = {
   theme: {
     extend: {
       gridTemplateRows: {
-        'protected-routes': '80px auto'
+        'protected-routes': '80px auto',
+        'app-sider': '260px 1fr 80px'
       },
       gridTemplateColumns: {
         'protected-routes': 'auto 400px'
