@@ -5,7 +5,7 @@ module.exports = {
     extend: {
       gridTemplateRows: {
         'protected-routes': '80px calc(100vh - 80px)',
-        'app-sider': '260px 1fr 80px'
+        'app-sider': 'auto 1fr 80px'
       },
       gridTemplateColumns: {
         'protected-routes': 'auto 300px'
