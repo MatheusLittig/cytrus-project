@@ -1,5 +1,5 @@
 import { ProtectedRoutes } from '@/components/layouts'
 
 export default function Home(): JSX.Element {
-  return <ProtectedRoutes>teste</ProtectedRoutes>
+  return <ProtectedRoutes title="Home">teste</ProtectedRoutes>
 }
