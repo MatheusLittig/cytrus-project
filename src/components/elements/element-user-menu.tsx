@@ -1,6 +1,6 @@
 import { FiBell, FiBookmark, FiUser } from 'react-icons/fi'
 
-export function UserStats(): JSX.Element {
+export function UserMenu(): JSX.Element {
   const userMenuOptions = [
     {
       title: 'Perfil',

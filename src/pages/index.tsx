@@ -1,4 +1,9 @@
-import { SessionInfo, UserStats, WeekSchedule } from '@/components/elements'
+import {
+  SectionDivider,
+  SessionInfo,
+  UserMenu,
+  WeekSchedule
+} from '@/components/elements'
 import { Header } from '@/components/modules'
 import Head from 'next/head'
 import { Fragment } from 'react'
@@ -26,7 +31,8 @@ export default function Home(): JSX.Element {
           <Sticky top={80}>
             <div className="p-4 space-y-8">
               <SessionInfo />
-              <UserStats />
+              <UserMenu />
+
               <WeekSchedule />
             </div>
           </Sticky>

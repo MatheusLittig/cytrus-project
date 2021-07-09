@@ -1,73 +1,93 @@
+import { FiCheckCircle, FiClock, FiPauseCircle } from 'react-icons/fi'
+import { SectionDivider } from './element-section-divider'
+
 export function WeekSchedule(): JSX.Element {
   const posts = [
     {
-      title: 'Review: 86 episode 11',
+      title: 'Review: 86 Eighty-Six - #11',
+      category: 'TEMPORADA',
+      picture:
+        'https://somoskudasai.com/wp-content/uploads/2021/04/portada_eighty-six-14.jpg',
       status: 'DISPONÍVEL'
     },
     {
-      title: 'Review: Fumetsu no Anata 13',
+      title: 'Review: Fumetsu no Anata - #13',
+      category: 'TEMPORADA',
+      picture:
+        'https://images-na.ssl-images-amazon.com/images/I/81DBqXng9DL.jpg',
       status: 'DISPONÍVEL'
     },
     {
       title: 'Análise: Mawaru Penguindrum',
-      status: 'PRODUÇÃO'
+      category: 'CLÁSSICOS',
+      picture:
+        'https://static1.cbrimages.com/wordpress/wp-content/uploads/2021/05/mawaru-penguindrum.jpg',
+      status: 'EM PRODUÇÃO'
     },
     {
-      title: 'Review: Vivy episode 9',
-      status: 'PRODUÇÃO'
-    },
-    {
-      title: 'Guia: temporada de outono',
-      status: 'PENDENTE'
-    },
-    {
-      title: 'Análise: Your Lie in April',
-      status: 'PENDENTE'
-    },
-    {
-      title: "Littig's week #18",
+      title: 'Review: Vivy Flourite Eyes Song #9',
+      category: 'TEMPORADA',
+      picture:
+        'https://lacradoresdesintoxicadoshome.files.wordpress.com/2021/04/capturar11.png',
       status: 'PENDENTE'
     }
   ]
 
-  function setStatusColor(status: string): string {
+  function setStatusColor(status: string, type: 'text' | 'addOn'): string {
     switch (status) {
       case 'DISPONÍVEL':
-        return 'bg-green-400'
+        return type === 'addOn' ? 'bg-green-400' : 'text-green-400'
 
-      case 'PRODUÇÃO':
-        return 'bg-yellow-400'
+      case 'EM PRODUÇÃO':
+        return type === 'addOn' ? 'bg-yellow-400' : 'text-yellow-500'
 
       default:
-        return 'bg-gray-400'
+        return type === 'addOn' ? 'bg-gray-300' : 'text-gray-300'
+    }
+  }
+
+  function setStatusIcon(status: string) {
+    switch (status) {
+      case 'DISPONÍVEL':
+        return <FiCheckCircle className="text-green-400" />
+
+      case 'EM PRODUÇÃO':
+        return <FiClock className="text-yellow-500" />
+
+      default:
+        return <FiPauseCircle className="text-gray-400" />
     }
   }
 
   return (
-    <div className="w-full space-y-8 bg-gray-800 p-4 rounded-lg">
-      <h1 className="text-gray-50 text-xl font-bold">Agenda da semana</h1>
+    <div className="w-full space-y-4">
+      <SectionDivider title="AGENDA DA SEMANA" />
 
       <div className="w-full">
-        <div className="w-full flex items-center justify-between">
-          <h3 className="text-gray-600 font-bold text-sm">CONTEÚDO</h3>
-          <h3 className="text-gray-600 font-bold text-sm">STATUS</h3>
-        </div>
+        {posts.map(item => (
+          <div
+            key={item.title}
+            className={
+              'w-full px-3 py-4 border-b border-gray-600 hover:bg-gray-800 cursor-pointer space-y-1'
+            }
+          >
+            <div className="w-full flex items-center justify-between">
+              <div className="flex items-center space-x-2">
+                <p className="text-xs text-gray-400">{item.category}</p>
+                <div className="w-1 h-1 bg-gray-400 rounded-full" />
+                <span
+                  className={`${setStatusColor(item.status, 'text')} text-xs`}
+                >
+                  {item.status}
+                </span>
+              </div>
 
-        <div className="mt-2">
-          {posts.map(post => (
-            <div
-              key={post.title}
-              className="py-1 rounded-md flex items-center justify-between"
-            >
-              <h1 className="text-base text-gray-50">{post.title}</h1>
-              <div
-                className={`w-2 h-2 ${setStatusColor(
-                  post.status
-                )} rounded-full`}
-              />
+              {setStatusIcon(item.status)}
             </div>
-          ))}
-        </div>
+
+            <h2 className="text-gray-50 font-bold">{item.title}</h2>
+          </div>
+        ))}
       </div>
     </div>
   )

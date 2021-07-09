@@ -2,7 +2,7 @@ interface SessionDivider {
   title: string
 }
 
-export function SessionDivider({ title }: SessionDivider): JSX.Element {
+export function SectionDivider({ title }: SessionDivider): JSX.Element {
   return (
     <div className="w-full flex items-center space-x-2">
       <div className="h-px w-4 bg-gray-600" />
