@@ -1,1 +1,1 @@
-export * from './module-header'
+export * from './header'

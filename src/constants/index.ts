@@ -1,1 +1,1 @@
-export * from './const-main-menu'
+export * from './main-menu'

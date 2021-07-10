@@ -1,5 +1,5 @@
 import { FiCheckCircle, FiClock, FiPauseCircle } from 'react-icons/fi'
-import { SectionDivider } from './element-section-divider'
+import { SectionDivider } from '../section-divider'
 
 export function WeekSchedule(): JSX.Element {
   const posts = [

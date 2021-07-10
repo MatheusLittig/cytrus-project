@@ -1,9 +1,4 @@
-import {
-  SectionDivider,
-  SessionInfo,
-  UserMenu,
-  WeekSchedule
-} from '@/components/elements'
+import { SessionInfo, UserMenu, WeekSchedule } from '@/components/elements'
 import { Header } from '@/components/modules'
 import Head from 'next/head'
 import { Fragment } from 'react'

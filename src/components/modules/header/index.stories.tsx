@@ -1,15 +1,15 @@
 import { Meta } from '@storybook/react'
 import { withNextRouter } from 'storybook-addon-next-router'
-import { MainMenu } from './index'
+import { Header } from './index'
 
 export default {
-  title: 'Main menu',
+  title: 'Header',
   decorators: [withNextRouter]
 } as Meta
 
-export const MainMenuStory = (): JSX.Element => <MainMenu />
+export const HeaderStory = (): JSX.Element => <Header />
 
-MainMenuStory.story = {
+HeaderStory.story = {
   parameters: {
     nextRouter: {
       path: '/',

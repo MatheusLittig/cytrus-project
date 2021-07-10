@@ -1,4 +1,4 @@
-import { mainMenu } from '../../../constants/const-main-menu'
+import { mainMenu } from '../../../constants/main-menu'
 import { useRouter } from 'next/dist/client/router'
 
 export function MainMenu(): JSX.Element {
