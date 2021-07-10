@@ -1,4 +1,5 @@
-import { MainMenu, SearchBar } from '../elements'
+import { SearchBar } from '../elements'
+import { MainMenu } from '../elements/main-menu'
 
 export function Header(): JSX.Element {
   return (
