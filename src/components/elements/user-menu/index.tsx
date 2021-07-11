@@ -29,10 +29,6 @@ export function UserMenu(): JSX.Element {
           key={item.title}
           className="w-full flex items-center space-x-4 p-2 cursor-pointer group"
         >
-          {item.active && (
-            <div className="h-5 w-1.5 rounded-tr-sm rounded-br-sm -ml-6 bg-yellow-500" />
-          )}
-
           <i
             className={`
             ${!item.active ? 'text-gray-50' : 'text-yellow-500'}
