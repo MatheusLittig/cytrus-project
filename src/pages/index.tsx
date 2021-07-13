@@ -1,4 +1,9 @@
-import { SessionInfo, UserMenu, WeekSchedule } from '@/components/elements'
+import {
+  SessionInfo,
+  TreendingPosts,
+  UserMenu,
+  WeekSchedule
+} from '@/components/elements'
 import { Button } from '@/components/elements/button'
 import { Header } from '@/components/modules'
 import Head from 'next/head'
@@ -19,21 +24,23 @@ export default function Home(): JSX.Element {
         </div>
 
         <div className="my-0 mx-auto grid grid-cols-app-content">
-          <div className="bg-transparent p-4 py-8 border-r border-gray-700">
+          <div className="bg-transparent pr-4 space-y-8 py-8 border-r border-gray-700">
             <div className="flex items-center justify-between">
               <h1 className="text-4xl text-gray-50 font-bold">
                 Em alta esta semana!
               </h1>
 
               <div className="flex items-center space-x-4">
-                <Button title="English-US" icon={<FiType />} />
+                <Button title="Português-BR" icon={<FiType />} />
                 <Button icon={<FiMoon />} variant="rounded" />
               </div>
             </div>
+
+            <TreendingPosts />
           </div>
 
           <Sticky top={80}>
-            <div className="p-4 space-y-8">
+            <div className="py-6 pl-4 space-y-8">
               <SessionInfo />
               <UserMenu />
 
