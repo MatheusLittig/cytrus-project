@@ -8,12 +8,15 @@ module.exports = {
       },
       gridTemplateColumns: {
         'app-content': '940px 340px'
-      }
+      },
+      backgroundSize: {
+        '150%': '150%'
+      },
     },
   },
   variants: {
     extend: {
-
+      backgroundSize: ['hover', 'focus']
     },
   },
   plugins: [],

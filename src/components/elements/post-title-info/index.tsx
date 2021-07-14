@@ -14,15 +14,17 @@ export function PostTitleInfo({
 }: PostTitleInfo): JSX.Element {
   return (
     <Fragment>
-      <h1 className="font-bold text-2xl text-gray-50">{title}</h1>
+      <h1 className="font-bold text-2xl group-hover:text-gray-200 text-gray-50">
+        {title}
+      </h1>
 
       <div className="flex items-center justify-between">
-        <div className="flex items-center space-x-2 text-gray-50">
+        <div className="flex items-center space-x-2 text-gray-50 group-hover:text-gray-200">
           <FiCalendar />
           <h3>{date}</h3>
         </div>
 
-        <div className="flex items-center space-x-2 text-gray-50">
+        <div className="flex items-center space-x-2 text-gray-50 group-hover:text-gray-200">
           <FiClock />
           <h3>{readTime}m</h3>
         </div>
