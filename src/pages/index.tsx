@@ -1,4 +1,5 @@
 import {
+  OtherContents,
   SessionInfo,
   TreendingPosts,
   UserMenu,
@@ -24,29 +25,41 @@ export default function Home(): JSX.Element {
         </div>
 
         <div className="my-0 mx-auto grid grid-cols-app-content">
-          <div className="bg-transparent pr-4 space-y-8 py-8 border-r border-gray-700">
-            <div className="flex items-center justify-between">
+          <div className="bg-transparent pr-4 space-y-12 py-8 border-r border-gray-700">
+            <div className="space-y-8">
+              <div className="flex items-center justify-between">
+                <h1 className="text-4xl text-gray-50 font-bold">
+                  Em alta esta semana!
+                </h1>
+
+                <div className="flex items-center space-x-4">
+                  <Button title="Português-BR" icon={<FiType />} />
+                  <Button icon={<FiMoon />} variant="rounded" />
+                </div>
+              </div>
+
+              <TreendingPosts />
+            </div>
+
+            <div className="space-y-8">
               <h1 className="text-4xl text-gray-50 font-bold">
-                Em alta esta semana!
+                Outros conteúdos
               </h1>
 
-              <div className="flex items-center space-x-4">
-                <Button title="Português-BR" icon={<FiType />} />
-                <Button icon={<FiMoon />} variant="rounded" />
-              </div>
+              <OtherContents />
             </div>
-
-            <TreendingPosts />
           </div>
 
-          <Sticky top={80}>
-            <div className="py-6 pl-4 space-y-8">
-              <SessionInfo />
-              <UserMenu />
+          <div style={{ height: 'calc(100vh - 80px)' }}>
+            <Sticky top={80}>
+              <div className="py-6 pl-4 space-y-8">
+                <SessionInfo />
+                <UserMenu />
 
-              <WeekSchedule />
-            </div>
-          </Sticky>
+                <WeekSchedule />
+              </div>
+            </Sticky>
+          </div>
         </div>
       </div>
     </Fragment>
